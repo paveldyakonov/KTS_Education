@@ -32,6 +32,7 @@ const InfoProductCard = () => {
       });
     };
     fetch();
+
     window.scrollTo(0, 0);
   }, [id]);
 
