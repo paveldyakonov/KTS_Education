@@ -37,9 +37,9 @@ const InfoProductCard = () => {
   }, [id]);
 
   let items = [];
-  if (card.image1) items.push(<img key="img1" src={card.image1} />);
-  if (card.image2) items.push(<img key="img2" src={card.image2} />);
-  if (card.image3) items.push(<img key="img3" src={card.image3} />);
+  if (card.image1) items.push(<img key="img1" src={card.image1} alt="" />);
+  if (card.image2) items.push(<img key="img2" src={card.image2} alt="" />);
+  if (card.image3) items.push(<img key="img3" src={card.image3} alt="" />);
 
   return (
     <div>
