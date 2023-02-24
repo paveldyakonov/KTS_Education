@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Button from "@components/Button";
+import Carousel from "@components/Carousel";
 import { API_ENDPOINT } from "@config/api";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -35,10 +36,16 @@ const InfoProductCard = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  let items = [];
+  if (card.image1) items.push(<img key="img1" src={card.image1} />);
+  if (card.image2) items.push(<img key="img2" src={card.image2} />);
+  if (card.image3) items.push(<img key="img3" src={card.image3} />);
+
   return (
     <div>
       <div id={card.id} className={styles.card}>
-        <img src={card.image1} alt={card.title} />
+        <Carousel carouselItems={items} />
+        {/* <img src={card.image1} alt={card.title} /> */}
         <div className={styles.info_about_card}>
           <div className={styles.title}>{card.title}</div>
           <div className={styles.subtitle}>{card.description}</div>
